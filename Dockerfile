@@ -11,6 +11,7 @@ RUN pip3 install yq && pip3 install kubernetes
 
 ENV PATH "/opt/tools:$PATH"
 RUN helm plugin install https://github.com/futuresimple/helm-secrets
+RUN helm plugin install https://github.com/databus23/helm-diff
 WORKDIR /opt/tools
 RUN curl -o /opt/tools/cqlsh-6.8.5-bin.tar.gz https://downloads.datastax.com/enterprise/cqlsh-6.8.5-bin.tar.gz && \
     tar -xzf /opt/tools/cqlsh-6.8.5-bin.tar.gz && \
