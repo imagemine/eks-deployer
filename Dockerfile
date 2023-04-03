@@ -15,7 +15,8 @@ RUN helm plugin install https://github.com/databus23/helm-diff
 WORKDIR /opt/tools
 RUN curl -o /opt/tools/cqlsh-6.8.5-bin.tar.gz https://downloads.datastax.com/enterprise/cqlsh-6.8.5-bin.tar.gz && \
     tar -xzf /opt/tools/cqlsh-6.8.5-bin.tar.gz && \
-    rm /opt/tools/cqlsh-6.8.5-bin.tar.gz
+    rm /opt/tools/cqlsh-6.8.5-bin.tar.gz && \
+    helm plugin update diff
 
 ENV PATH "/opt/tools/cqlsh-6.8.5/bin:$PATH"
 
