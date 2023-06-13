@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt update && apt-get install curl -y && apt-get install unzip -y && apt-get install gpg -y && apt-get install jq -y \
-&& apt-get install python3 -y && apt-get install python3-pip -y && apt-get install git -y && apt-get install sudo -y \
+&& apt-get install python3 -y && apt-get install python3-pip -y && apt-get install git -y && apt-get install -y cron && apt-get install sudo -y \
 && mkdir -p /opt/tools && mkdir -p /opt/work
 RUN cd /opt/work && curl -LO "https://get.helm.sh/helm-v3.11.2-linux-amd64.tar.gz"  && tar xzf helm-v3.11.2-linux-amd64.tar.gz \
 && curl -LO "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip"  && unzip awscli-exe-linux-x86_64.zip && ./aws/install \
